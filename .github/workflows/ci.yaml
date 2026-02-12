@@ -29,7 +29,8 @@ jobs:
         run: ./gradlew clean build
 
       - name: SonarCloud Scan
-        run: ./gradlew sonarqube \
+        run: |
+          ./gradlew sonarqube \
           -Dsonar.projectKey=advprog-2026-kki2-project_individual-preparation \
           -Dsonar.organization=advprog-2026-kki2-project \
           -Dsonar.host.url=https://sonarcloud.io \

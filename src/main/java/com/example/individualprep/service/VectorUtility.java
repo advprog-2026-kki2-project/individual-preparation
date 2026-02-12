@@ -46,7 +46,14 @@ public class VectorUtility {
     }
 
     public double norm(double[] v1) {
-        // TODO: Implement me properly!
-        return 0.0;
+        if (v1 == null || v1.length == 0) {
+            throw new IllegalArgumentException("Vector cannot be null or empty");
+        }
+        double sum = 0.0;
+        for (int i = 0; i < v1.length; i++) {
+            sum += v1[i] * v1[i];
+        }
+        return Math.sqrt(sum);
     }
+
 }

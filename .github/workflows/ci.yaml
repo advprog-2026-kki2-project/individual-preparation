@@ -15,6 +15,7 @@ jobs:
     name: Build and Analyze
     runs-on: ubuntu-latest
 
+
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -33,12 +34,5 @@ jobs:
 
       - name: Build and run tests
         run: ./gradlew clean build
-
-      - name: SonarCloud Scan
-        uses: SonarSource/sonarcloud-github-action@v2
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-        with:
-          args: >
-            -Dsonar.projectKey=advprog-2026-kki2-project_individual-preparation
-            -Dsonar.organization=advprog-2026-kki2-project
